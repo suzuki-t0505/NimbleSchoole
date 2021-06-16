@@ -1,0 +1,29 @@
+#section h2{
+    color: red;
+}
+
+#section h1{
+    text-emphasis: circle red;
+    text-emphasis-position: under;
+}
+#section{
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: rgb(247, 212, 235);
+    padding: 50px 100px;
+}
+
+#section a:hover{
+    transition-duration: 1.3s;
+    color: palevioletred;
+}
+
+#section a{
+    color: rgb(209, 106, 209);
+    font-size: 3rem;
+}
+
+#section hr{
+    border-color: rgba(146, 0, 139, 0.822);
+    border-style: dashed;
+    border-width: 5px;
+}

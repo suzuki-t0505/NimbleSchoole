@@ -1,0 +1,3 @@
+<%= link "← All FAQ", to: Routes.blog_path(@conn, :faqindex) %>
+<h1><%= @post.question %></h1>
+<%= raw @post.answer %>

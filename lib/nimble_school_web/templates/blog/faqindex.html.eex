@@ -1,0 +1,11 @@
+<h1>FAQ</h1>
+
+<%= for post <- @posts do %>
+    <div id="<%= post.id %>" style="mergin-bottom:3rem;">
+        <h2>
+            Question : <%= link post.question, to: Routes.blog_path(@conn, :faqshow, post)%>
+        </h2>
+    </div>
+<% end %>
+<br>
+<%= link "← All posts", to: Routes.blog_path(@conn, :index) %>

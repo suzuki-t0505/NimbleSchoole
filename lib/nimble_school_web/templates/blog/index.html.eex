@@ -1,0 +1,48 @@
+<div id="section">
+<h1>New posts</h1>
+<%= for post <- @newposts do %>
+    <div id="<%= post.id %>" style="mergin-bottom:3rem;">
+        <h2>
+            <%= link post.title, to: Routes.blog_path(@conn, :show, post)%>
+        </h2>
+        <p>
+            <time><%= post.date %></time> by <%= post.author %>
+        </p>
+        <p>
+            Tagged as <%= Enum.join(post.tags, ", ") %>
+        </p>
+        <%= raw post.description%>
+    </div>
+<% end %>
+
+<hr>
+
+<h1>Listing all posts</h1>
+<%= for post <- @posts do %>
+    <div id="<%= post.id %>" style="mergin-bottom: 3rem;">
+        <h2>
+            <%= link post.title, to: Routes.blog_path(@conn, :show, post)%>
+        </h2>
+        <p>
+            <time><%= post.date %></time> by <%= post.author %>
+        </p>
+        <p>
+            Tagged as <%= Enum.join(post.tags, ", ") %>
+        </p>
+        <%= raw post.description %>
+    </div>
+<% end %>
+
+<hr>
+<h1>Sarch for tags</h1>
+<%= for tag <- @tags do %>
+    <p>
+    <%= link tag, to: Routes.blog_path(@conn, :taglist, tag)%>
+    </p>
+<% end %>
+
+<hr>
+<h1>FAQ</h1>
+<%= link "FAQ", to: Routes.blog_path(@conn, :faqindex) %>
+
+</div>
